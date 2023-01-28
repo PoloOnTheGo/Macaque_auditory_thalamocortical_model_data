@@ -1478,6 +1478,7 @@ def setRunCfg(b, type='mpi_bulletin'):
         b.runCfg = {'type': 'hpc_slurm',
                 'allocation': 'icei_H_King', # bridges='ib4iflp', comet m1='shs100', comet nsg='csd403', gcp='default'
             'walltime': '04:00:00', #'48:00:00',
+            'partition': 'g100_usr_prod',
             'qos': 'noQOS',
             'nodes': 1,
             'coresPerNode': 32,  # comet=24, bridges=28, gcp=32
@@ -1503,7 +1504,7 @@ if __name__ == '__main__':
     b = custom_spont('../data/v34_batch25/trial_2142/trial_2142_cfg.json')
 
     b.batchLabel = 'v34_batch_default'
-    b.saveFolder = 'data/sound/'+b.batchLabel
+    b.saveFolder = '../data/'+b.batchLabel
 
     setRunCfg(b, 'hpc_slurm_cineca') #'hpc_slurm_gcp') #'mpi_bulletin') #'hpc_slurm_gcp')
     b.run() # run batch
