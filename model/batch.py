@@ -1480,6 +1480,22 @@ def setRunCfg(b, type='mpi_bulletin'):
             'mpiCommand': 'mpirun', # comet='ibrun', bridges='mpirun'
             'skip': True}
 
+    elif type=='hpc_slurm_cineca':
+        b.runCfg = {'type': 'hpc_slurm',
+            'allocation': 'icei_H_King', # bridges='ib4iflp', comet m1='shs100', comet nsg='csd403', gcp='default'
+            'walltime': '4:30:00', #'48:00:00',
+            'nodes': 4,
+            'coresPerNode': 48,  # comet=24, bridges=28, gcp=32
+            'partition': 'g100_usr_prod',
+            'qos': None,
+            'email': 'poulami.ghosh@bccn-berlin.de',
+            'folder': '/g100/home/userexternal/pghosh01/A1_model/',  # comet,gcp='/salvadord', bridges='/salvi82'
+            'script': 'init.py',
+            'mpiCommand': 'srun', # comet='ibrun', bridges,gcp='mpirun'
+            'skip': True } #'nrniv -mpi -python', #'python3',
+            #'custom': '#SBATCH --exclude=compute[17-64000]'} # only use first 16 nodes (non-preemptible for long runs )
+            # --nodelist=compute1
+
 
 
 # ----------------------------------------------------------------------------------------------
@@ -1500,6 +1516,6 @@ if __name__ == '__main__':
     b.batchLabel = 'v34_batch68' 
     b.saveFolder = 'data/'+b.batchLabel
 
-    setRunCfg(b, 'hpc_slurm_gcp') #'hpc_slurm_gcp') #'mpi_bulletin') #'hpc_slurm_gcp')
+    setRunCfg(b, 'hpc_slurm_cineca') #'hpc_slurm_gcp') #'mpi_bulletin') #'hpc_slurm_gcp')
     b.run() # run batch
 
