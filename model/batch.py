@@ -1500,10 +1500,10 @@ if __name__ == '__main__':
 
     cellTypes = ['IT2', 'PV2', 'SOM2', 'VIP2', 'NGF2', 'IT3', 'ITP4', 'ITS4', 'IT5A', 'CT5A', 'IT5B', 'PT5B', 'CT5B', 'IT6', 'CT6', 'TC', 'HTC', 'IRE', 'TI']
 
-    b = custom_spont('data/v34_batch25/trial_2142/trial_2142_cfg.json')
+    b = custom_spont('../data/v34_batch25/trial_2142/trial_2142_cfg.json')
 
     b.batchLabel = 'v35_batch7_test'
-    b.saveFolder = 'data/'+b.batchLabel
+    b.saveFolder = '../data/'+b.batchLabel
 
     setRunCfg(b, 'hpc_slurm_cineca') #'hpc_slurm_gcp') #'mpi_bulletin') #'hpc_slurm_gcp')
     b.run() # run batch
