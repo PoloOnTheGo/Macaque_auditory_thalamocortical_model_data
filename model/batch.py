@@ -1482,7 +1482,7 @@ def setRunCfg(b, type='mpi_bulletin'):
             'nodes': 1,
             'coresPerNode': 32,  # comet=24, bridges=28, gcp=32
             'email': 'poulami.ghosh@bccn-berlin.de',
-            'folder': '/g100/home/userexternal/pghosh01/macaque_auditory_model',
+            'folder': '/g100/home/userexternal/pghosh01/macaque_auditory_model/model',
             'script': 'init.py',
             'custom': '#SBATCH --partition=g100_usr_prod',
             'mpiCommand': 'srun', # comet='ibrun', bridges,gcp='mpirun
@@ -1502,8 +1502,8 @@ if __name__ == '__main__':
 
     b = custom_spont('../data/v34_batch25/trial_2142/trial_2142_cfg.json')
 
-    b.batchLabel = 'v35_batch7_test'
-    b.saveFolder = '../data/'+b.batchLabel
+    b.batchLabel = 'v34_batch_default'
+    b.saveFolder = 'data/sound/'+b.batchLabel
 
     setRunCfg(b, 'hpc_slurm_cineca') #'hpc_slurm_gcp') #'mpi_bulletin') #'hpc_slurm_gcp')
     b.run() # run batch
