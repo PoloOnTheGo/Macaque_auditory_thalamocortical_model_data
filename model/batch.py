@@ -1485,7 +1485,6 @@ def setRunCfg(b, type='mpi_bulletin'):
             'email': 'poulami.ghosh@bccn-berlin.de',
             'folder': '/g100/home/userexternal/pghosh01/macaque_auditory_model/model',
             'script': 'init.py',
-            'custom': '#SBATCH --partition=g100_usr_prod',
             'mpiCommand': 'srun', # comet='ibrun', bridges,gcp='mpirun
             'skip': True } #'nrniv -mpi -python', #'python3',
             #'custom': '#SBATCH --exclude=compute[17-64000]'} # only use first 16 nodes (non-preemptible for long runs )
