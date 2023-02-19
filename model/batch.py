@@ -1502,7 +1502,7 @@ if __name__ == '__main__':
 
     b = custom_spont('../data/v34_batch25/trial_2142/trial_2142_cfg.json')
 
-    b.batchLabel = 'v34_batch_default'
+    b.batchLabel = 'v34_batch_eeg_plot'
     b.saveFolder = '../data/'+b.batchLabel
 
     setRunCfg(b, 'hpc_slurm_cineca') #'hpc_slurm_gcp') #'mpi_bulletin') #'hpc_slurm_gcp')

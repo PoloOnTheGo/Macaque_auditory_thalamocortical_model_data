@@ -89,7 +89,7 @@ cfg.analysis['plotRaster'] = {'include': cfg.allpops, 'saveFig': True, 'showFig'
 
 cfg.analysis['plotLFP'] = {'plots': ['timeSeries'], 'electrodes': [10], 'maxFreq': 80, 'figSize': (8,4), 'saveData': False, 'saveFig': True, 'showFig': False} # 'PSD', 'spectrogram'
 #cfg.analysis['plotDipole'] = {'saveFig': True}
-#cfg.analysis['plotEEG'] = {'saveFig': True}
+cfg.analysis['plotEEG'] = {'saveFig': True}
 
 
 #------------------------------------------------------------------------------
