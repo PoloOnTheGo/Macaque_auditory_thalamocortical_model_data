@@ -1478,13 +1478,14 @@ def setRunCfg(b, type='mpi_bulletin'):
         b.runCfg = {'type': 'hpc_slurm',
                 'allocation': 'icei_H_King', # bridges='ib4iflp', comet m1='shs100', comet nsg='csd403', gcp='default'
             'walltime': '04:00:00', #'48:00:00',
-            'partition': 'g100_usr_prod',
+            # 'partition': 'g100_usr_prod',
             'qos': 'noQOS',
             'nodes': 1,
             'coresPerNode': 32,  # comet=24, bridges=28, gcp=32
             'email': 'poulami.ghosh@bccn-berlin.de',
             'folder': '/g100/home/userexternal/pghosh01/macaque_auditory_model/model',
             'script': 'init.py',
+            'custom': '#SBATCH --partition=g100_usr_prod',
             'mpiCommand': 'srun', # comet='ibrun', bridges,gcp='mpirun
             'skip': True } #'nrniv -mpi -python', #'python3',
             #'custom': '#SBATCH --exclude=compute[17-64000]'} # only use first 16 nodes (non-preemptible for long runs )
