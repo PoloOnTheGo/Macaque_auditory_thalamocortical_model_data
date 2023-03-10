@@ -1480,8 +1480,8 @@ def setRunCfg(b, type='mpi_bulletin'):
             'walltime': '04:00:00', #'48:00:00',
             'partition': 'g100_usr_prod',
             'qos': 'noQOS',
-            'nodes': 3,
-            'coresPerNode': 40,  # comet=24, bridges=28, gcp=32
+            'nodes': 1,
+            'coresPerNode': 32,  # comet=24, bridges=28, gcp=32
             'email': 'poulami.ghosh@bccn-berlin.de',
             'folder': '/g100/home/userexternal/pghosh01/macaque_auditory_model/model',
             'script': 'init.py',
