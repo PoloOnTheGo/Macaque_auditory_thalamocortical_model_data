@@ -1597,11 +1597,11 @@
         ],
         "runCfg": {
             "allocation": "icei_H_King",
-            "coresPerNode": 40,
+            "coresPerNode": 32,
             "email": "poulami.ghosh@bccn-berlin.de",
             "folder": "/g100/home/userexternal/pghosh01/macaque_auditory_model/model",
             "mpiCommand": "srun",
-            "nodes": 3,
+            "nodes": 1,
             "partition": "g100_usr_prod",
             "qos": "noQOS",
             "script": "init.py",
