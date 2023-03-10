@@ -202,6 +202,9 @@ def custom_spont(filename):
     initCfg['printPopAvgRates'] = [1500, initCfg['duration']] 
     initCfg['scaleDensity'] = 1.0
     initCfg['recordStep'] = 0.05
+    initCfg['recordDipole'] = True
+    # initCfg['saveDipoleCells'] = ['all']
+    # initCfg['saveDipoleCells'] = cfg.allpops
 
     # plotting and saving params
     initCfg[('analysis','plotRaster','timeRange')] = initCfg['printPopAvgRates']
