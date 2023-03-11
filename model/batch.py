@@ -185,7 +185,11 @@ def custom_spont(filename):
         cfgLoad = json.load(f)['simConfig']
     cfgLoad2 = cfgLoad
 
-    
+    allpops = ['NGF1', 'IT2', 'SOM2', 'PV2', 'VIP2', 'NGF2', 'IT3', 'SOM3', 'PV3', 'VIP3', 'NGF3', 'ITP4', 'ITS4',
+               'SOM4', 'PV4', 'VIP4', 'NGF4', 'IT5A', 'CT5A', 'SOM5A', 'PV5A', 'VIP5A', 'NGF5A', 'IT5B', 'PT5B', 'CT5B',
+               'SOM5B', 'PV5B', 'VIP5B', 'NGF5B', 'IT6', 'CT6', 'SOM6', 'PV6', 'VIP6', 'NGF6', 'TC', 'TCM', 'HTC',
+               'IRE', 'IREM', 'TI', 'TIM', 'IC']
+
     params[('seeds', 'conn')] = list(range(1)) #[4321+(17*i) for i in range(5)]
     params[('seeds', 'stim')] = list(range(1)) #[1234+(17*i) for i in range(5)]
 
@@ -200,11 +204,11 @@ def custom_spont(filename):
     
     initCfg['duration'] = 3000 #11500
     initCfg['printPopAvgRates'] = [1500, initCfg['duration']] 
-    initCfg['scaleDensity'] = 1.0
-    initCfg['recordStep'] = 0.05
+    initCfg['scaleDensity'] = 0.5
+    initCfg['recordStep'] = 0.01
     initCfg['recordDipole'] = True
-    # initCfg['saveDipoleCells'] = ['all']
-    # initCfg['saveDipoleCells'] = cfg.allpops
+    initCfg['saveDipoleCells'] = ['all']
+    initCfg['saveDipolePops'] = allpops
 
     # plotting and saving params
     initCfg[('analysis','plotRaster','timeRange')] = initCfg['printPopAvgRates']
