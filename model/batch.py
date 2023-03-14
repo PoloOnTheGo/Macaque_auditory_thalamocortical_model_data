@@ -253,7 +253,7 @@ def custom_speech(filename):
     params = specs.ODict()
 
     if not filename:
-        filename = 'data/v34_batch25/trial_2142/trial_2142_cfg.json'
+        filename = '../data/v34_batch25/trial_2142/trial_2142_cfg.json'
 
     # from prev 
     import json
@@ -261,19 +261,27 @@ def custom_speech(filename):
         cfgLoad = json.load(f)['simConfig']
     cfgLoad2 = cfgLoad
 
-    params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
-    params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
+    params[('seeds', 'conn')] = list(range(1))  # [4321+(17*i) for i in range(5)]
+    params[('seeds', 'stim')] = list(range(1))  # [1234+(17*i) for i in range(5)]
+
+    # params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
+    # params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
     
     groupedParams = []
 
     # --------------------------------------------------------
     # initial config
     initCfg = {} # set default options from prev sim
-    
-    initCfg['duration'] = 4500
-    initCfg['printPopAvgRates'] = [1500, 4500] 
+
+    initCfg['duration'] = 3000  # 11500
+    initCfg['printPopAvgRates'] = [1500, initCfg['duration']]
     initCfg['scaleDensity'] = 1.0
     initCfg['recordStep'] = 0.05
+
+    # initCfg['duration'] = 4500
+    # initCfg['printPopAvgRates'] = [1500, 4500]
+    # initCfg['scaleDensity'] = 1.0
+    # initCfg['recordStep'] = 0.05
 
     # plotting and saving params
     initCfg[('analysis','plotRaster','timeRange')] = initCfg['printPopAvgRates']
@@ -282,12 +290,13 @@ def custom_speech(filename):
     #initCfg[('analysis', 'plotLFP', 'timeRange')] = initCfg['printPopAvgRates']
     #initCfg[('analysis', 'plotCSD', 'timeRange')] = [1500, 1700]
 
-    initCfg['ICThalInput'] = {'file': 'data/ICoutput/ICoutput_CF_9600_10400_wav_01_ba_peter.mat', 
+    initCfg['ICThalInput'] = {'file': '../data/ICoutput/ICoutput_CF_3800_4200_wav_pure_tone_4000Hz_25ms.mat',
+    # initCfg['ICThalInput'] = {'file': 'data/ICoutput/ICoutput_CF_9600_10400_wav_01_ba_peter.mat',
                             'startTime': 2500, 
-                            'weightE': 0.25,#1.0, 
-                            'weightI': 0.25,#1.0, 
+                            'weightE': 1,#1.0,
+                            'weightI': 1,#1.0,
                             'probE': 0.12, 
-                            'probI': 0.12, #0.25 
+                            'probI': 0.25, #0.25
                             'seed': 1}  
 
 
@@ -1500,7 +1509,7 @@ if __name__ == '__main__':
 
     cellTypes = ['IT2', 'PV2', 'SOM2', 'VIP2', 'NGF2', 'IT3', 'ITP4', 'ITS4', 'IT5A', 'CT5A', 'IT5B', 'PT5B', 'CT5B', 'IT6', 'CT6', 'TC', 'HTC', 'IRE', 'TI']
 
-    b = custom_spont('../data/v34_batch25/trial_2142/trial_2142_cfg.json')
+    b = custom_speech('../data/v34_batch25/trial_2142/trial_2142_cfg.json')
 
     b.batchLabel = 'v34_batch_eeg_plot'
     b.saveFolder = '../data/'+b.batchLabel
