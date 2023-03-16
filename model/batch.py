@@ -290,7 +290,7 @@ def custom_speech(filename):
     #initCfg[('analysis', 'plotLFP', 'timeRange')] = initCfg['printPopAvgRates']
     #initCfg[('analysis', 'plotCSD', 'timeRange')] = [1500, 1700]
 
-    initCfg['ICThalInput'] = {'file': '../data/ICoutput/ASSR.mat',
+    initCfg['ICThalInput'] = {'file': '../data/ICoutput/ASSR_1.mat',
     # initCfg['ICThalInput'] = {'file': 'data/ICoutput/ICoutput_CF_9600_10400_wav_01_ba_peter.mat',
                             'startTime': 2500, 
                             'weightE': 1,#1.0,
