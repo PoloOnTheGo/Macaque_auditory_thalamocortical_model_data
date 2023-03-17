@@ -292,7 +292,7 @@ def custom_speech(filename):
 
     initCfg['ICThalInput'] = {'file': '../data/ICoutput/ASSR_25ms_40Hz_click_train_10sec.mat',
     # initCfg['ICThalInput'] = {'file': 'data/ICoutput/ICoutput_CF_9600_10400_wav_01_ba_peter.mat',
-                            'startTime': 2500, 
+                            'startTime': 9,
                             'weightE': 1,#1.0,
                             'weightI': 1,#1.0,
                             'probE': 0.12, 
