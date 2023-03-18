@@ -196,11 +196,11 @@ def custom_spont(filename):
     # --------------------------------------------------------
     # initial config
     initCfg = {} # set default options from prev sim
-    
-    initCfg['duration'] = 3000 #11500
-    initCfg['printPopAvgRates'] = [1500, initCfg['duration']] 
+
+    initCfg['duration'] = 5000  # 11500
+    initCfg['printPopAvgRates'] = [1, initCfg['duration']]
     initCfg['scaleDensity'] = 1.0
-    initCfg['recordStep'] = 0.05
+    initCfg['recordStep'] = 0.1
 
     # plotting and saving params
     initCfg[('analysis','plotRaster','timeRange')] = initCfg['printPopAvgRates']
@@ -1509,7 +1509,7 @@ if __name__ == '__main__':
 
     cellTypes = ['IT2', 'PV2', 'SOM2', 'VIP2', 'NGF2', 'IT3', 'ITP4', 'ITS4', 'IT5A', 'CT5A', 'IT5B', 'PT5B', 'CT5B', 'IT6', 'CT6', 'TC', 'HTC', 'IRE', 'TI']
 
-    b = custom_speech('../data/v34_batch25/trial_2142/trial_2142_cfg.json')
+    b = custom_spont('../data/v34_batch25/trial_2142/trial_2142_cfg.json')
 
     b.batchLabel = 'v34_batch_eeg_plot'
     b.saveFolder = '../data/'+b.batchLabel
