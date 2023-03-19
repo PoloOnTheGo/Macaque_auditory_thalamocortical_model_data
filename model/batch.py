@@ -295,8 +295,8 @@ def custom_speech(filename):
                             'startTime': 1,
                             'weightE': 1,#1.0,
                             'weightI': 0.5,#1.0,
-                            'probE': 0.12, 
-                            'probI': 0.05, #0.25
+                            'probE': 0.25,
+                            'probI': 0.25, #0.25
                             'seed': 1}  
 
 
