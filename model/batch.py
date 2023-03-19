@@ -274,9 +274,9 @@ def custom_speech(filename):
     initCfg = {} # set default options from prev sim
 
     initCfg['duration'] = 5000  # 11500
-    initCfg['printPopAvgRates'] = [0.1, initCfg['duration']]
-    initCfg['scaleDensity'] = 1.5
-    initCfg['recordStep'] = 0.5
+    initCfg['printPopAvgRates'] = [1, initCfg['duration']]
+    initCfg['scaleDensity'] = 1.0
+    initCfg['recordStep'] = 0.1
 
     # initCfg['duration'] = 4500
     # initCfg['printPopAvgRates'] = [1500, 4500]
@@ -292,9 +292,9 @@ def custom_speech(filename):
 
     initCfg['ICThalInput'] = {'file': '../data/ICoutput/ASSR_25ms_40Hz_click_train_10sec.mat',
     # initCfg['ICThalInput'] = {'file': 'data/ICoutput/ICoutput_CF_9600_10400_wav_01_ba_peter.mat',
-                            'startTime': 0.1,
-                            'weightE': 2,#1.0,
-                            'weightI': 0.25,#1.0,
+                            'startTime': 1,
+                            'weightE': 1,#1.0,
+                            'weightI': 0.5,#1.0,
                             'probE': 0.12, 
                             'probI': 0.05, #0.25
                             'seed': 1}  
