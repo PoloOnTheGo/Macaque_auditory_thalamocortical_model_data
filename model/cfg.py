@@ -187,7 +187,7 @@ cfg.rateBkg = {'exc': 40, 'inh': 40}
 cfg.EbkgThalamicGain = 4.0
 cfg.IbkgThalamicGain = 4.0
 
-cfg.cochlearThalInput = {'numCells': 200, 'freqRange': [10, 50], 'toneFreq': 40, 'loudnessDBs': 50}  # parameters to generate realistic  auditory thalamic inputs using Brian Hears
+cfg.cochlearThalInput = {'numCells': 200, 'freqRange': [200, 3000], 'toneFreq': 40, 'loudnessDBs': 50}  # parameters to generate realistic  auditory thalamic inputs using Brian Hears
 
 # parameters to generate realistic cochlear + IC input ; weight =unitary connection somatic EPSP (mV)
 cfg.ICThalInput = {} #'file': 'data/ICoutput/ICoutput_CF_9600_10400_wav_01_ba_peter.mat', 

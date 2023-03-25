@@ -5,7 +5,7 @@ import numpy as np
 rng = np.random.RandomState()
 
 def cochlearInputSpikes(freqRange=[4800, 5200], #[125, 20000], #[9000, 11000],  
-                        numCenterFreqs=4, #100,
+                        numCenterFreqs=20, #4, #100,
                         numCells=4*100, #10000,  # should be ~100 * numCFs
                         duration=1000,
                         toneFreq=5000,
