@@ -87,7 +87,7 @@ cfg.saveCellConns = False
 cfg.analysis['plotRaster'] = {'include': cfg.allpops, 'saveFig': True, 'showFig': False, 'popRates': True, 'orderInverse': True, 'timeRange': [0,cfg.duration], 'figSize': (14,12), 'lw': 0.3, 'markerSize': 3, 'marker': '.', 'dpi': 300}      	## Plot a raster
 # cfg.analysis['plotSpikeStats'] = {'stats': ['rate'], 'figSize': (6,12), 'timeRange': [0, 2500], 'dpi': 300, 'showFig': 0, 'saveFig': 1}
 
-cfg.analysis['plotLFP'] = {'plots': ['timeSeries', 'PSD', 'spectrogram', 'locations'], 'electrodes': [10], 'maxFreq': 80, 'figSize': (8,4), 'saveData': False, 'saveFig': True, 'showFig': False} # 'PSD', 'spectrogram'
+cfg.analysis['plotLFP'] = {'plots': ['timeSeries', 'PSD', 'spectrogram'], 'electrodes': [10], 'maxFreq': 80, 'figSize': (8,4), 'saveData': False, 'saveFig': True, 'showFig': False} # 'PSD', 'spectrogram'
 #cfg.analysis['plotDipole'] = {'saveFig': True}
 cfg.analysis['plotEEG'] = {'saveFig': True}
 
@@ -187,7 +187,7 @@ cfg.rateBkg = {'exc': 40, 'inh': 40}
 cfg.EbkgThalamicGain = 4.0
 cfg.IbkgThalamicGain = 4.0
 
-cfg.cochlearThalInput = False # {'numCells': 200, 'freqRange': [200, 3000], 'toneFreq': 40, 'loudnessDBs': 50}  # parameters to generate realistic  auditory thalamic inputs using Brian Hears
+cfg.cochlearThalInput = False #{'numCells': 200, 'freqRange': [9*1e3, 11*1e3], 'toneFreq': 10*1e3, 'loudnessDBs': 50}  # parameters to generate realistic  auditory thalamic inputs using Brian Hears
 
 # parameters to generate realistic cochlear + IC input ; weight =unitary connection somatic EPSP (mV)
 cfg.ICThalInput = {} #'file': 'data/ICoutput/ICoutput_CF_9600_10400_wav_01_ba_peter.mat',
