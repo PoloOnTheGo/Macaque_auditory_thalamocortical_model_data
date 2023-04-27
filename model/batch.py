@@ -294,7 +294,7 @@ def custom_speech(filename):
     # initCfg['ICThalInput'] = {'file': 'data/ICoutput/ICoutput_CF_9600_10400_wav_01_ba_peter.mat',
                             'startTime': 1,
                             'weightE': 1,#1.0,
-                            'weightI': 0.5,#1.0,
+                            'weightI': 1,#1.0,
                             'probE': 0.12,
                             'probI': 0.25, #0.25
                             'seed': 1}  
@@ -1509,7 +1509,7 @@ if __name__ == '__main__':
 
     cellTypes = ['IT2', 'PV2', 'SOM2', 'VIP2', 'NGF2', 'IT3', 'ITP4', 'ITS4', 'IT5A', 'CT5A', 'IT5B', 'PT5B', 'CT5B', 'IT6', 'CT6', 'TC', 'HTC', 'IRE', 'TI']
 
-    b = custom_spont('../data/v34_batch25/trial_2142/trial_2142_cfg.json')
+    b = custom_speech('../data/v34_batch25/trial_2142/trial_2142_cfg.json')
 
     b.batchLabel = 'v34_batch_eeg_plot'
     b.saveFolder = '../data/'+b.batchLabel
