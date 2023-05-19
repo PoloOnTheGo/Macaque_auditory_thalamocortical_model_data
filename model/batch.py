@@ -260,8 +260,11 @@ def custom_speech(filename):
         cfgLoad = json.load(f)['simConfig']
     cfgLoad2 = cfgLoad
 
-    params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
-    params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
+    params[('seeds', 'conn')] = list(range(1))  # [4321+(17*i) for i in range(5)]
+    params[('seeds', 'stim')] = list(range(1))  # [1234+(17*i) for i in range(5)]
+
+    # params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
+    # params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
     
     groupedParams = []
 
