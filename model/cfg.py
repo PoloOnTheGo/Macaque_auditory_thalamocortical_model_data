@@ -8,8 +8,9 @@ Contributors: ericaygriffith@gmail.com, salvadordura@gmail.com
 """
 
 
-from netpyne import specs
 import pickle
+
+from netpyne import specs
 
 cfg = specs.SimConfig()
 
@@ -89,7 +90,7 @@ cfg.analysis['plotRaster'] = {'include': cfg.allpops, 'saveFig': True, 'showFig'
 
 cfg.analysis['plotLFP'] = {'plots': ['timeSeries', 'PSD', 'spectrogram'], 'electrodes': ['all', 'avg'], 'maxFreq': 80, 'figSize': (8,4), 'saveData': False, 'saveFig': True, 'showFig': False} # 'PSD', 'spectrogram'
 #cfg.analysis['plotDipole'] = {'saveFig': True}
-cfg.analysis['plotEEG'] = {'saveFig': True}
+#cfg.analysis['plotEEG'] = {'saveFig': True}
 
 
 #------------------------------------------------------------------------------

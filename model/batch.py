@@ -197,9 +197,9 @@ def custom_spont(filename):
     initCfg = {} # set default options from prev sim
 
     initCfg['duration'] = 5000  # 11500
-    initCfg['printPopAvgRates'] = [1, initCfg['duration']]
+    initCfg['printPopAvgRates'] = [1500, initCfg['duration']]
     initCfg['scaleDensity'] = 1.0
-    initCfg['recordStep'] = 0.1
+    initCfg['recordStep'] = 0.05
 
     # plotting and saving params
     initCfg[('analysis','plotRaster','timeRange')] = initCfg['printPopAvgRates']
@@ -260,11 +260,8 @@ def custom_speech(filename):
         cfgLoad = json.load(f)['simConfig']
     cfgLoad2 = cfgLoad
 
-    params[('seeds', 'conn')] = list(range(1))  # [4321+(17*i) for i in range(5)]
-    params[('seeds', 'stim')] = list(range(1))  # [1234+(17*i) for i in range(5)]
-
-    # params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
-    # params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
+    params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
+    params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
     
     groupedParams = []
 
@@ -272,15 +269,10 @@ def custom_speech(filename):
     # initial config
     initCfg = {} # set default options from prev sim
 
-    initCfg['duration'] = 2000  # 11500
-    initCfg['printPopAvgRates'] = [1, initCfg['duration']]
+    initCfg['duration'] = 4500
+    initCfg['printPopAvgRates'] = [1500, initCfg['duration']]
     initCfg['scaleDensity'] = 1.0
-    initCfg['recordStep'] = 0.1
-
-    # initCfg['duration'] = 4500
-    # initCfg['printPopAvgRates'] = [1500, 4500]
-    # initCfg['scaleDensity'] = 1.0
-    # initCfg['recordStep'] = 0.05
+    initCfg['recordStep'] = 0.05
 
     # plotting and saving params
     initCfg[('analysis','plotRaster','timeRange')] = initCfg['printPopAvgRates']
@@ -290,12 +282,11 @@ def custom_speech(filename):
     #initCfg[('analysis', 'plotCSD', 'timeRange')] = [1500, 1700]
 
     initCfg['ICThalInput'] = {'file': '../data/ICoutput/ASSR_1ms_40Hz_AM_click_train_10sec_9.5K_10.5K_100_CF_40_BMF.mat',
-    # initCfg['ICThalInput'] = {'file': 'data/ICoutput/ICoutput_CF_9600_10400_wav_01_ba_peter.mat',
-                            'startTime': 1,
-                            'weightE': 0.5,#1.0,
-                            'weightI': 1.0,#1.0,
+                            'startTime': 2500,
+                            'weightE': 0.25,#1.0,
+                            'weightI': 0.25,#1.0,
                             'probE': 0.12,
-                            'probI': 0.25, #0.25
+                            'probI': 0.12, #0.25
                             'seed': 1}  
 
 
