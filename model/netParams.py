@@ -6,8 +6,10 @@ High-level specifications for A1 network model using NetPyNE
 Contributors: ericaygriffith@gmail.com, salvadordura@gmail.com
 """
 
+import json
+import pickle
+
 from netpyne import specs
-import pickle, json
 
 netParams = specs.NetParams()   # object of class NetParams to store the network parameters
 
@@ -58,7 +60,7 @@ Itypes = ['PV', 'SOM', 'VIP', 'NGF']
 cellModels = ['HH_reduced', 'HH_full'] # List of cell models
 
 # II: 100-950, IV: 950-1250, V: 1250-1550, VI: 1550-2000 
-layer = {'1': [0.00, 0.05], '2': [0.05, 0.08], '3': [0.08, 0.475], '4': [0.475, 0.625], '5A': [0.625, 0.667], '5B': [0.667, 0.775], '6': [0.775, 1], 'thal': [1.2, 1.4], 'cochlear': [1.6, 1.8]}  # normalized layer boundaries  
+layer = {'1': [0.00, 0.05], '2': [0.05, 0.08], '3': [0.08, 0.475], '4': [0.475, 0.625], '5A': [0.625, 0.667], '5B': [0.667, 0.775], '6': [0.775, 1], 'thal': [1.2, 1.4], 'cochlear': [1.6, 1.8]}  # normalized layer boundaries
 
 layerGroups = { '1-3': [layer['1'][0], layer['3'][1]],  # L1-3
                 '4': layer['4'],                      # L4
@@ -562,7 +564,7 @@ if cfg.addBkgConn:
         ICrates = data['BE_sout_population'].tolist()
         ICtimes = list(np.arange(0, cfg.duration, 1000./fs))  # list with times to set each time-dep rate
         
-        ICrates = ICrates * 2 # 200 cells
+        ICrates = ICrates * 4 # 200 cells
         
         numCells = len(ICrates)
 
