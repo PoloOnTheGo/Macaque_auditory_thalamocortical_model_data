@@ -268,8 +268,8 @@ def custom_speech(filename):
 
     params[('ICThalInput', 'probE')] = [0.12, 0.26]  # [0.12, 0.26] # 0,1,2
     params[('ICThalInput', 'probI')] = [0.12, 0.26]  # 0,1,2
-    params[('ICThalInput', 'weightE')] = [0.5, 0.8]
-    params[('ICThalInput', 'weightI')] = [0.5, 0.8]
+    params[('ICThalInput', 'weightE')] = [0.20, 0.25]
+    params[('ICThalInput', 'weightI')] = [0.20, 0.25]
     
     groupedParams = []
 
