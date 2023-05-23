@@ -287,7 +287,7 @@ def custom_speech(filename):
 
     initCfg['ICThalInput'] = {'file': '../data/ICoutput/ASSR_1ms_40Hz_AM_click_train_4sec_9.5K_10.5K_50_CF_1000_BMF.mat',
                             'startTime': 2000,
-                            'weightE': 0.8,#1.0,
+                            'weightE': 0.5,#1.0,
                             'weightI': 0.2,#1.0,
                             'probE': 0.06,
                             'probI': 0.25, #0.25
