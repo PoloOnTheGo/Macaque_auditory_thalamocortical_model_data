@@ -266,9 +266,9 @@ def custom_speech(filename):
     # params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
     # params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
 
-    params[('ICThalInput', 'probE')] = [0.12, 0.18, 0.26]
-    params[('ICThalInput', 'probI')] = [0.26, 0.4, 0.5]
-    params[('ICThalInput', 'weightE')] = [0.3, 0.4, 0.5, 0.6, 0.7]
+    params[('ICThalInput', 'probE')] = [0.26, 0.5, 0.8, 1]
+    params[('ICThalInput', 'probI')] = [0.5, 0.8, 1]
+    # params[('ICThalInput', 'weightE')] = [0.3, 0.4, 0.5, 0.6, 0.7]
     # params[('ICThalInput', 'weightI')] = [0.3, 0.4, 0.5]
 
     groupedParams = []
@@ -277,7 +277,7 @@ def custom_speech(filename):
     # initial config
     initCfg = {} # set default options from prev sim
 
-    initCfg['duration'] = 5000
+    initCfg['duration'] = 11500
     initCfg['printPopAvgRates'] = [1500, initCfg['duration']]
     initCfg['scaleDensity'] = 1.0
     initCfg['recordStep'] = 0.05
@@ -291,10 +291,10 @@ def custom_speech(filename):
 
     initCfg['ICThalInput'] = {'file': '../data/ICoutput/ASSR_1ms_40Hz_AM_click_train_4sec_9.5K_10.5K_50_CF_1000_BMF.mat',
                             'startTime': 2000,
-                            # 'weightE': 0.5,#1.0,
+                            'weightE': 0.7,#1.0,
                             'weightI': 0.5,#1.0,
-                            # 'probE': 0.12,
-                            # 'probI': 0.26, #0.25
+                            # 'probE': 0.26,
+                            # 'probI': 0.5, #0.25
                             'seed': 1}  
 
 
