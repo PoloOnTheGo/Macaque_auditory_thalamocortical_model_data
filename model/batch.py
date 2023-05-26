@@ -260,14 +260,14 @@ def custom_speech(filename):
         cfgLoad = json.load(f)['simConfig']
     cfgLoad2 = cfgLoad
 
-    # params[('seeds', 'conn')] = list(range(1))  # [4321+(17*i) for i in range(5)]
-    # params[('seeds', 'stim')] = list(range(1))  # [1234+(17*i) for i in range(5)]
+    params[('seeds', 'conn')] = list(range(1))  # [4321+(17*i) for i in range(5)]
+    params[('seeds', 'stim')] = list(range(1))  # [1234+(17*i) for i in range(5)]
 
     # params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
     # params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
 
-    params[('ICThalInput', 'probE')] = [0.26, 0.5, 0.8, 1]
-    params[('ICThalInput', 'probI')] = [0.5, 0.8, 1]
+    # params[('ICThalInput', 'probE')] = [0.26, 0.5, 0.8, 1]
+    # params[('ICThalInput', 'probI')] = [0.5, 0.8, 1]
     # params[('ICThalInput', 'weightE')] = [0.3, 0.4, 0.5, 0.6, 0.7]
     # params[('ICThalInput', 'weightI')] = [0.3, 0.4, 0.5]
 
@@ -293,8 +293,8 @@ def custom_speech(filename):
                             'startTime': 2600,
                             'weightE': 0.7,#1.0,
                             'weightI': 0.5,#1.0,
-                            # 'probE': 0.26,
-                            # 'probI': 0.5, #0.25
+                            'probE': 0.26,
+                            'probI': 0.5, #0.25
                             'seed': 1}  
 
 
