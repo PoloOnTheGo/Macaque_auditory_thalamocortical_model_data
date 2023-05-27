@@ -1483,7 +1483,7 @@ def setRunCfg(b, type='mpi_bulletin'):
     elif type=='hpc_slurm_cineca':
         b.runCfg = {'type': 'hpc_slurm',
                 'allocation': 'icei_H_King', # bridges='ib4iflp', comet m1='shs100', comet nsg='csd403', gcp='default'
-            'walltime': '04:00:00', #'48:00:00',
+            'walltime': '06:00:00', #'48:00:00',
             'partition': 'g100_usr_prod',
             'qos': 'noQOS',
             'nodes': 1,
