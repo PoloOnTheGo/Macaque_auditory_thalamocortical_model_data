@@ -260,14 +260,14 @@ def custom_speech(filename):
         cfgLoad = json.load(f)['simConfig']
     cfgLoad2 = cfgLoad
 
-    params[('seeds', 'conn')] = list(range(1))  # [4321+(17*i) for i in range(5)]
-    params[('seeds', 'stim')] = list(range(1))  # [1234+(17*i) for i in range(5)]
+    # params[('seeds', 'conn')] = list(range(1))  # [4321+(17*i) for i in range(5)]
+    # params[('seeds', 'stim')] = list(range(1))  # [1234+(17*i) for i in range(5)]
 
     # params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
     # params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
 
-    params[('ICThalInput', 'probE')] = [0.26, 0.5, 0.8, 1]
-    params[('ICThalInput', 'probI')] = [0.5, 0.8, 1]
+    params[('ICThalInput', 'probE')] = [0.06, 0.12, 0.26, 0.5, 0.8, 1]
+    params[('ICThalInput', 'probI')] = [0.5, 0.8, 1, 1.5, 2, 2.5]
     # params[('ICThalInput', 'weightE')] = [0.3, 0.4, 0.5, 0.6, 0.7]
     # params[('ICThalInput', 'weightI')] = [0.3, 0.4, 0.5]
 
@@ -277,7 +277,7 @@ def custom_speech(filename):
     # initial config
     initCfg = {} # set default options from prev sim
 
-    initCfg['duration'] = 7000
+    initCfg['duration'] = 11500
     initCfg['printPopAvgRates'] = [1500, initCfg['duration']]
     initCfg['scaleDensity'] = 1.0
     initCfg['recordStep'] = 0.05
@@ -289,7 +289,7 @@ def custom_speech(filename):
     #initCfg[('analysis', 'plotLFP', 'timeRange')] = initCfg['printPopAvgRates']
     #initCfg[('analysis', 'plotCSD', 'timeRange')] = [1500, 1700]
 
-    initCfg['ICThalInput'] = {'file': '../data/ICoutput/ASSR_1ms_40Hz_AM_click_train_4sec_9.5K_10.5K_50_CF_1000_BMF.mat',
+    initCfg['ICThalInput'] = {'file': '../data/ICoutput/ASSR_1ms_40Hz_AM_click_train_10sec_9.5K_10.5K_100_CF_40_BMF.mat',
                             'startTime': 2000,
                             'weightE': 0.7,#1.0,
                             'weightI': 0.5,#1.0,
