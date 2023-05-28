@@ -266,10 +266,10 @@ def custom_speech(filename):
     # params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
     # params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
 
-    params[('ICThalInput', 'probE')] = [0.12, 0.26, 0.5, 0.8, 1, 1.5]
-    params[('ICThalInput', 'probI')] = [0.5, 0.8, 1, 1.5, 2, 2.5]
-    # params[('ICThalInput', 'weightE')] = [0.3, 0.4, 0.5, 0.6, 0.7]
-    # params[('ICThalInput', 'weightI')] = [0.3, 0.4, 0.5]
+    params[('ICThalInput', 'probE')] = [0.5, 0.8, 1]
+    params[('ICThalInput', 'probI')] = [0.8, 1, 1.5]
+    params[('ICThalInput', 'weightE')] = [0.6, 0.7, 0.8]
+    params[('ICThalInput', 'weightI')] = [0.4, 0.5, 0.6]
 
     groupedParams = []
 
@@ -291,8 +291,8 @@ def custom_speech(filename):
 
     initCfg['ICThalInput'] = {'file': '../data/ICoutput/ASSR_1ms_40Hz_AM_click_train_8sec_9.5K_10.5K_100_CF_1000_BMF.mat',
                             'startTime': 2600,
-                            'weightE': 0.7,#1.0,
-                            'weightI': 0.5,#1.0,
+                            # 'weightE': 0.7,#1.0,
+                            # 'weightI': 0.5,#1.0,
                             # 'probE': 0.26,
                             # 'probI': 0.5, #0.25
                             'seed': 1}  
