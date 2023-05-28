@@ -266,8 +266,8 @@ def custom_speech(filename):
     # params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
     # params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
 
-    params[('ICThalInput', 'probE')] = [0.5, 0.8, 1]
-    params[('ICThalInput', 'probI')] = [0.8, 1, 1.5]
+    params[('ICThalInput', 'probE')] = [0.26, 0.38, 0.5]
+    params[('ICThalInput', 'probI')] = [0.3, 0.5, 0.8]
     params[('ICThalInput', 'weightE')] = [0.6, 0.7, 0.8]
     params[('ICThalInput', 'weightI')] = [0.4, 0.5, 0.6]
 
