@@ -564,7 +564,7 @@ if cfg.addBkgConn:
         ICrates = data['BE_sout_population'].tolist()
         ICtimes = list(np.arange(0, cfg.duration, 1000./fs))  # list with times to set each time-dep rate
         
-        ICrates = ICrates * 20 # 200 cells
+        ICrates = ICrates * 10 # 200 cells
         
         numCells = len(ICrates)
 
