@@ -1482,7 +1482,7 @@ def setRunCfg(b, type='mpi_bulletin'):
 
     elif type=='hpc_slurm_cineca':
         b.runCfg = {'type': 'hpc_slurm',
-                'allocation': 'icei_H_King', # bridges='ib4iflp', comet m1='shs100', comet nsg='csd403', gcp='default'
+            'allocation': 'icei_H_King', # bridges='ib4iflp', comet m1='shs100', comet nsg='csd403', gcp='default'
             'walltime': '06:00:00', #'48:00:00',
             'partition': 'g100_usr_prod',
             'qos': 'noQOS',
@@ -1497,7 +1497,20 @@ def setRunCfg(b, type='mpi_bulletin'):
             #'custom': '#SBATCH --exclude=compute[17-64000]'} # only use first 16 nodes (non-preemptible for long runs )
             # --nodelist=compute1
 
-
+    elif type == 'hpc_slurm_TUB':
+        b.runCfg = {'type': 'hpc_slurm',
+            'allocation': 'ni',
+            'walltime': '24:00:00',
+            'partition': 'standard',
+            'nodes': 4,
+            'coresPerNode': 28,
+            'email': 'poulami.ghosh@bccn-berlin.de',
+            'folder': '/home/users/p/poulami/macaque_auditory_model/model',
+            'script': 'init.py',
+            # 'custom': '#SBATCH --partition=standard',  # SBATCH -D /home/users/a/andrejthieme/model/Macaque_auditory_thalamocortical_model_data/model/ \n#SBATCH --partition=standard \n#SBATCH --mem=100G',
+            'mpiCommand': 'mpirun',
+            'nrnCommand': 'nrniv -mpi -python3',
+            'skip': True}
 
 # ----------------------------------------------------------------------------------------------
 # Main code
@@ -1512,6 +1525,6 @@ if __name__ == '__main__':
     b.batchLabel = 'v34_batch_eeg_plot'
     b.saveFolder = '../data/'+b.batchLabel
 
-    setRunCfg(b, 'hpc_slurm_cineca') #'hpc_slurm_gcp') #'mpi_bulletin') #'hpc_slurm_gcp')
+    setRunCfg(b, 'hpc_slurm_TUB') #'hpc_slurm_gcp') #'mpi_bulletin') #'hpc_slurm_gcp')
     b.run() # run batch
 
