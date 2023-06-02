@@ -1507,7 +1507,7 @@ def setRunCfg(b, type='mpi_bulletin'):
             'email': 'poulami.ghosh@bccn-berlin.de',
             'folder': '/home/users/p/poulami/macaque_auditory_model/model',
             'script': 'init.py',
-            # 'custom': '#SBATCH --partition=standard',  # SBATCH -D /home/users/a/andrejthieme/model/Macaque_auditory_thalamocortical_model_data/model/ \n#SBATCH --partition=standard \n#SBATCH --mem=100G',
+            'custom': '#SBATCH --partition=standard',
             'mpiCommand': 'mpirun',
             # 'nrnCommand': 'nrniv -mpi -python3.8',
             'skip': True}
