@@ -1509,7 +1509,7 @@ def setRunCfg(b, type='mpi_bulletin'):
             'script': 'init.py',
             # 'custom': '#SBATCH --partition=standard',  # SBATCH -D /home/users/a/andrejthieme/model/Macaque_auditory_thalamocortical_model_data/model/ \n#SBATCH --partition=standard \n#SBATCH --mem=100G',
             'mpiCommand': 'mpirun',
-            # 'nrnCommand': 'nrniv -mpi -python3.8',
+            'nrnCommand': 'nrniv -mpi -python3.8',
             'skip': True}
 
 # ----------------------------------------------------------------------------------------------
