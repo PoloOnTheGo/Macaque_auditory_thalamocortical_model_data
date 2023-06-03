@@ -293,7 +293,7 @@ def custom_speech(filename):
                             'startTime': 2600,
                             'weightE': 0.7,#1.0,
                             'weightI': 0.6,#1.0,
-                            'probE': 0.5,
+                            'probE': 0.26,
                             'probI': 0.8, #0.25
                             'seed': 1}  
 
@@ -1503,7 +1503,7 @@ def setRunCfg(b, type='mpi_bulletin'):
             'walltime': '24:00:00',
             'partition': 'standard',
             'nodes': 1,
-            'coresPerNode': 32,
+            'coresPerNode': 80,
             'email': 'poulami.ghosh@bccn-berlin.de',
             'folder': '/home/users/p/poulami/macaque_auditory_model/model',
             'script': 'init.py',
