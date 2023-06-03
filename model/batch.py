@@ -1503,7 +1503,7 @@ def setRunCfg(b, type='mpi_bulletin'):
             'walltime': '24:00:00',
             'partition': 'standard',
             'nodes': 1,
-            'coresPerNode': 80,
+            'coresPerNode': 32,
             'email': 'poulami.ghosh@bccn-berlin.de',
             'folder': '/home/users/p/poulami/macaque_auditory_model/model',
             'script': 'init.py',
