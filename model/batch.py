@@ -271,7 +271,7 @@ def custom_speech(filename):
     # params[('ICThalInput', 'weightE')] = [0.6, 0.7, 0.8]
     # params[('ICThalInput', 'weightI')] = [0.5, 0.6, 0.7]
 
-    params[('ICThalInput', 'file')] = ['../data/ICoutput/20Hz_20BMF_4sec.mat', '../data/ICoutput/30Hz_30BMF_4sec.mat', '../data/ICoutput/40Hz_40BMF_4sec.mat']
+    params[('ICThalInput', 'file')] = ['../data/ICoutput/20Hz_40BMF_4sec.mat', '../data/ICoutput/30Hz_40BMF_4sec.mat']
 
     groupedParams = []
 
