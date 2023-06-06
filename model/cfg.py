@@ -58,7 +58,7 @@ cfg.recordStep = 0.1            ## Step size (in ms) to save data
 
 cfg.recordLFP = [[100, y, 100] for y in range(0, 2000, 100)]
 cfg.recordLFP = [[x, 1000, 100] for x in range(100, 2200, 200)]
-#cfg.saveLFPPops =  cfg.allCorticalPops #, "IT3", "SOM3", "PV3", "VIP3", "NGF3", "ITP4", "ITS4", "IT5A", "CT5A", "IT5B", "PT5B", "CT5B", "IT6", "CT6"]
+cfg.saveLFPPops = cfg.allCorticalPops #, "IT3", "SOM3", "PV3", "VIP3", "NGF3", "ITP4", "ITS4", "IT5A", "CT5A", "IT5B", "PT5B", "CT5B", "IT6", "CT6"]
 
 cfg.recordDipole = True
 # cfg.saveDipoleCells = ['all']
@@ -91,6 +91,8 @@ cfg.analysis['plotRaster'] = {'include': cfg.allpops, 'saveFig': True, 'showFig'
 #cfg.analysis['plotLFP'] = {'plots': ['timeSeries', 'PSD', 'spectrogram'], 'electrodes': [0], 'maxFreq': 80, 'figSize': (8,4), 'saveData': False, 'saveFig': True, 'showFig': False} # 'PSD', 'spectrogram'
 #cfg.analysis['plotDipole'] = {'saveFig': True}
 #cfg.analysis['plotEEG'] = {'saveFig': True}
+layer_bounds = {'L1': 100, 'L2': 160, 'L3': 950, 'L4': 1250, 'L5A': 1334, 'L5B': 1550, 'L6': 2000}
+cfg.analysis['plotCSD'] = {'spacing_um': 100, 'LFP_overlay': 1, 'layer_lines': 1, 'layer_bounds': layer_bounds, 'saveFig': 1, 'showFig': 0}
 
 
 #------------------------------------------------------------------------------
