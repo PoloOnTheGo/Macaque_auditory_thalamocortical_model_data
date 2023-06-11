@@ -285,7 +285,7 @@ def custom_speech(filename):
     initCfg['recordStep'] = 0.05
 
     # plotting and saving params
-    initCfg[('analysis','plotRaster','timeRange')] = initCfg['printPopAvgRates']
+    # initCfg[('analysis','plotRaster','timeRange')] = initCfg['printPopAvgRates']
     #initCfg[('analysis', 'plotTraces', 'timeRange')] = initCfg['printPopAvgRates']
     #initCfg[('analysis', 'plotSpikeStats', 'timeRange')] = initCfg['printPopAvgRates']
     #initCfg[('analysis', 'plotLFP', 'timeRange')] = initCfg['printPopAvgRates']
@@ -1270,7 +1270,7 @@ def optunaRatesLayersWmat():
                     ['VIP2', 'SOM3'],
                     ['VIP3', 'SOM3'],
                     
-                    ['IT6', 'PV6'], 
+                    ['IT6', 'PV6'],
                     ['IT6', 'SOM6'], 
                     ['IT6', 'VIP6'], 
                     ['IT6', 'NGF6']]
