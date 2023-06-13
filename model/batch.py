@@ -303,12 +303,12 @@ def custom_speech(filename):
     initCfg = {} # set default options from prev sim
 
     initCfg['duration'] = 7000
-    initCfg['printPopAvgRates'] = [1500, initCfg['duration']]
+    initCfg['printPopAvgRates'] = [0, initCfg['duration']]
     initCfg['scaleDensity'] = 1.0
     initCfg['recordStep'] = 0.05
 
     # plotting and saving params
-    # initCfg[('analysis','plotRaster','timeRange')] = initCfg['printPopAvgRates']
+    initCfg[('analysis','plotRaster','timeRange')] = initCfg['printPopAvgRates']
     #initCfg[('analysis', 'plotTraces', 'timeRange')] = initCfg['printPopAvgRates']
     #initCfg[('analysis', 'plotSpikeStats', 'timeRange')] = initCfg['printPopAvgRates']
     #initCfg[('analysis', 'plotLFP', 'timeRange')] = initCfg['printPopAvgRates']
