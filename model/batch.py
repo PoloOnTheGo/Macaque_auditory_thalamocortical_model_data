@@ -266,12 +266,35 @@ def custom_speech(filename):
     # params[('seeds', 'conn')] = [4321+(17*i) for i in range(5)]
     # params[('seeds', 'stim')] = [1234+(17*i) for i in range(5)]
 
-    params[('ICThalInput', 'probE')] = [0.26, 0.38]
-    params[('ICThalInput', 'probI')] = [0.8, 0.92]
-    params[('ICThalInput', 'weightE')] = [0.6, 0.7]
-    params[('ICThalInput', 'weightI')] = [0.5, 0.6]
+    # params[('ICThalInput', 'probE')] = [0.26, 0.38]
+    # params[('ICThalInput', 'probI')] = [0.8, 0.92]
+    # params[('ICThalInput', 'weightE')] = [0.6, 0.7]
+    # params[('ICThalInput', 'weightI')] = [0.5, 0.6]
 
-    params[('ICThalInput', 'file')] = ['../data/ICoutput/20Hz_1000BMF_4sec.mat', '../data/ICoutput/30Hz_1000BMF_4sec.mat', '../data/ICoutput/40Hz_1000BMF_4sec.mat']
+    params[('ICThalInput', 'startTime')] = [1000, 1500, 2600]
+
+    params[('ICThalInput', 'file')] = ['../data/ICoutput/20Hz_1kHz_4s_AM_click_train_1kBMF_50CF.mat',
+                                       '../data/ICoutput/20Hz_1kHz_4s_AM_click_train_1kBMF_100CF.mat',
+                                       '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_50CF.mat',
+                                       '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
+                                       # '../data/ICoutput/20Hz_1kHz_4s_AM_tone_1kBMF_50CF.mat',
+                                       # '../data/ICoutput/20Hz_1kHz_4s_AM_tone_1kBMF_100CF.mat',
+                                       # '../data/ICoutput/20Hz_10kHz_4s_AM_tone_1kBMF_50CF.mat.mat', # 20Hz end
+                                       '../data/ICoutput/30Hz_1kHz_4s_AM_click_train_1kBMF_50CF.mat',
+                                       '../data/ICoutput/30Hz_1kHz_4s_AM_click_train_1kBMF_100CF.mat',
+                                       '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_50CF.mat',
+                                       '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
+                                       # '../data/ICoutput/30Hz_1kHz_4s_AM_tone_1kBMF_50CF.mat',
+                                       # '../data/ICoutput/30Hz_1kHz_4s_AM_tone_1kBMF_100CF.mat',
+                                       # '../data/ICoutput/30Hz_10kHz_4s_AM_tone_1kBMF_50CF.mat.mat', # 30Hz end
+                                       '../data/ICoutput/40Hz_1kHz_4s_AM_click_train_1kBMF_50CF.mat',
+                                       '../data/ICoutput/40Hz_1kHz_4s_AM_click_train_1kBMF_100CF.mat',
+                                       '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_50CF.mat',
+                                       '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
+                                       # '../data/ICoutput/40Hz_1kHz_4s_AM_tone_1kBMF_50CF.mat',
+                                       # '../data/ICoutput/40Hz_1kHz_4s_AM_tone_1kBMF_100CF.mat',
+                                       # '../data/ICoutput/40Hz_10kHz_4s_AM_tone_1kBMF_50CF.mat.mat'
+                                       ]
 
     groupedParams = []
 
@@ -293,11 +316,11 @@ def custom_speech(filename):
 
     initCfg['ICThalInput'] = {
                             # 'file': '../data/ICoutput/20Hz_1000BMF_4sec.mat',
-                            'startTime': 2600,
-                            # 'weightE': 0.7,#1.0,
-                            # 'weightI': 0.6,#1.0,
-                            # 'probE': 0.26,
-                            # 'probI': 0.8, #0.25
+                            # 'startTime': 2600,
+                            'weightE': 0.7,#1.0,
+                            'weightI': 0.6,#1.0,
+                            'probE': 0.26,
+                            'probI': 0.8, #0.25
                             'seed': 1}  
 
 
