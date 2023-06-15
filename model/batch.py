@@ -278,6 +278,7 @@ def custom_speech(filename):
                                        # '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_50CF.mat',
                                        # '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
                                        '../data/ICoutput/20Hz_1000BMF_4sec.mat',  # attenuated  20Hz_10kHz_4s_AM_click_train_1kBMF_100CF
+                                        '../data/ICoutput/20Hz_1000BMF.mat',
                                        # '../data/ICoutput/20Hz_1kHz_4s_AM_tone_1kBMF_50CF.mat',
                                        # '../data/ICoutput/20Hz_1kHz_4s_AM_tone_1kBMF_100CF.mat',
                                        # '../data/ICoutput/20Hz_10kHz_4s_AM_tone_1kBMF_50CF.mat.mat', # 20Hz end
@@ -301,7 +302,7 @@ def custom_speech(filename):
     # initial config
     initCfg = {}  # set default options from prev sim
 
-    initCfg['duration'] = 7000
+    initCfg['duration'] = 8000
     initCfg['printPopAvgRates'] = [0, initCfg['duration']]
     initCfg['scaleDensity'] = 1.0
     initCfg['recordStep'] = 0.05
