@@ -293,7 +293,8 @@ def custom_speech(filename):
         # '../data/ICoutput/40Hz_1000BMF_4sec.mat', # attenuated  40Hz_10kHz_4s_AM_click_train_1kBMF_100CF
         # '../data/ICoutput/40Hz_1kHz_4s_AM_tone_1kBMF_50CF.mat',
         # '../data/ICoutput/40Hz_1kHz_4s_AM_tone_1kBMF_100CF.mat',
-        # '../data/ICoutput/40Hz_10kHz_4s_AM_tone_1kBMF_50CF.mat.mat'
+        # '../data/ICoutput/40Hz_10kHz_4s_AM_tone_1kBMF_50CF.mat.mat',
+        '../data/ICoutput/40Hz_1000BMF_4sec.mat'
     ]
 
     groupedParams = []
@@ -317,10 +318,10 @@ def custom_speech(filename):
     initCfg['ICThalInput'] = {
         # 'file': '../data/ICoutput/20Hz_1000BMF_4sec.mat',
         # 'startTime': 2600,
-        'weightE': 0.7,  # 1.0,
-        'weightI': 0.6,  # 1.0,
-        'probE': 0.26,
-        'probI': 0.8,  # 0.25
+        'weightE': 0.4,  # 1.0,
+        'weightI': 0.5,  # 1.0,
+        'probE': 0.12,
+        'probI': 0.26,  # 0.25
         'seed': 1}
 
     initCfg['saveCellSecs'] = False
