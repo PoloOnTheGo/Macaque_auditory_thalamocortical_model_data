@@ -88,13 +88,13 @@ cfg.saveCellConns = False
 cfg.analysis['plotRaster'] = {'include': cfg.allpops, 'saveFig': True, 'showFig': False, 'popRates': True, 'orderInverse': True, 'timeRange': [0,cfg.duration], 'figSize': (14,12), 'lw': 0.3, 'markerSize': 1, 'marker': '.', 'dpi': 300}      	## Plot a raster
 # cfg.analysis['plotSpikeStats'] = {'stats': ['rate'], 'figSize': (6,12), 'timeRange': [0, 2500], 'dpi': 300, 'showFig': 0, 'saveFig': 1}
 
-cfg.analysis['plotLFP'] = {'plots': ['timeSeries', 'spectrogram', 'PSD'], 'electrodes': [0, 1, 2, 3], 'maxFreq': 80, 'figSize': (8,4), 'saveData': False, 'saveFig': True, 'showFig': False} # 'PSD', 'spectrogram'
+cfg.analysis['plotLFP'] = {'plots': ['timeSeries', 'spectrogram', 'PSD'], 'electrodes': [0, 1, 12, 13], 'maxFreq': 80, 'figSize': (8,4), 'saveData': False, 'saveFig': True, 'showFig': False} # 'PSD', 'spectrogram'
 # cfg.analysis['plotLFP'] = {'plots': ['PSD'], 'timeRange': [3500, 6000],  'electrodes': [0, 1, 2, 3], 'maxFreq': 80, 'figSize': (8,4), 'saveData': False, 'saveFig': True, 'showFig': False} # 'PSD', 'spectrogram'
 
 #cfg.analysis['plotDipole'] = {'saveFig': True}
 #cfg.analysis['plotEEG'] = {'saveFig': True}
 layer_bounds = {'L1': 100, 'L2': 160, 'L3': 950, 'L4': 1250, 'L5A': 1334, 'L5B': 1550, 'L6': 2000}
-cfg.analysis['plotCSD'] = {'spacing_um': 100, 'LFP_overlay': 1, 'layer_lines': 1, 'layer_bounds': layer_bounds, 'saveFig': 1, 'showFig': 0}
+cfg.analysis['plotCSD'] = {'spacing_um': 100, 'LFP_overlay': 1, 'layer_lines': 1, 'layer_bounds': layer_bounds, 'saveFig': 1, 'showFig': 0, 'overlay':'LFP', 'hlines':True}
 
 
 #------------------------------------------------------------------------------

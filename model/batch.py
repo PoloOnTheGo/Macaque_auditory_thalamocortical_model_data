@@ -272,29 +272,32 @@ def custom_speech(filename):
     # params[('ICThalInput', 'weightE')] = [0.6, 0.7]
     # params[('ICThalInput', 'weightI')] = [0.5, 0.6]
 
-    params[('ICThalInput', 'startTime')] = [1000, 1500, 2600]
+    # params[('ICThalInput', 'startTime')] = [1000, 1500, 2600]
 
     params[('ICThalInput', 'file')] = [
-        # '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_50CF.mat',
-        # '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
-        '../data/ICoutput/20Hz_1000BMF_4sec.mat',  # attenuated  20Hz_10kHz_4s_AM_click_train_1kBMF_100CF
-        '../data/ICoutput/20Hz_1000BMF.mat',
-        # '../data/ICoutput/20Hz_1kHz_4s_AM_tone_1kBMF_50CF.mat',
-        # '../data/ICoutput/20Hz_1kHz_4s_AM_tone_1kBMF_100CF.mat',
-        # '../data/ICoutput/20Hz_10kHz_4s_AM_tone_1kBMF_50CF.mat.mat', # 20Hz end
-        # '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_50CF.mat',
-        # '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
-        # '../data/ICoutput/30Hz_1000BMF_4sec.mat', # attenuated  30Hz_10kHz_4s_AM_click_train_1kBMF_100CF
-        # '../data/ICoutput/30Hz_1kHz_4s_AM_tone_1kBMF_50CF.mat',
-        # '../data/ICoutput/30Hz_1kHz_4s_AM_tone_1kBMF_100CF.mat',
-        # '../data/ICoutput/30Hz_10kHz_4s_AM_tone_1kBMF_50CF.mat.mat', # 30Hz end
-        # '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_50CF.mat',
-        # '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
-        # '../data/ICoutput/40Hz_1000BMF_4sec.mat', # attenuated  40Hz_10kHz_4s_AM_click_train_1kBMF_100CF
-        # '../data/ICoutput/40Hz_1kHz_4s_AM_tone_1kBMF_50CF.mat',
-        # '../data/ICoutput/40Hz_1kHz_4s_AM_tone_1kBMF_100CF.mat',
-        # '../data/ICoutput/40Hz_10kHz_4s_AM_tone_1kBMF_50CF.mat.mat',
-        '../data/ICoutput/40Hz_1000BMF_4sec.mat'
+        '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
+        '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_0_1.mat',
+        '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_0_0.05.mat',
+        '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_-0.05_0.05.mat',
+        '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_0_2.244.mat',
+        '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_-2_2.mat',
+        '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_old_83_0_4.mat',
+
+        '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
+        '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_0_1.mat',
+        '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_0_0.05.mat',
+        '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_-0.05_0.05.mat',
+        '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_0_2.244.mat',
+        '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_-2_2.mat',
+        '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_old_83_0_4.mat',
+
+        '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
+        '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_0_1.mat',
+        '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_0_0.05.mat',
+        '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_-0.05_0.05.mat',
+        '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_0_2.244.mat',
+        '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_-2_2.mat',
+        '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_old_83_0_4.mat'
     ]
 
     groupedParams = []
@@ -317,11 +320,11 @@ def custom_speech(filename):
 
     initCfg['ICThalInput'] = {
         # 'file': '../data/ICoutput/20Hz_1000BMF_4sec.mat',
-        # 'startTime': 2600,
-        'weightE': 0.4,  # 1.0,
-        'weightI': 0.5,  # 1.0,
-        'probE': 0.12,
-        'probI': 0.26,  # 0.25
+        'startTime': 1600,
+        'weightE': 0.7,  # 1.0,
+        'weightI': 0.6,  # 1.0,
+        'probE': 0.26,
+        'probI': 0.8,  # 0.25
         'seed': 1}
 
     initCfg['saveCellSecs'] = False
