@@ -288,11 +288,16 @@ if cfg.addConn and cfg.IEGain > 0.0:
                         for l in layerGainLabels:  # used to tune each layer group independently
                             
                             prob = '%f * exp(-dist_2D/%f)' % (pmat[pre][post], lmat[pre][post])
-                            
+
+                            expression_factor = 1
                             if 'SOM' in pre:
                                 synMech = SOMESynMech
                             elif 'PV' in pre:
                                 synMech = PVSynMech
+                                if '3' in l:
+                                    expression_factor -= 0.29
+                                elif '4' in l:
+                                    expression_factor -= .35
                             elif 'VIP' in pre:
                                 synMech = VIPSynMech
                             elif 'NGF' in pre:
@@ -303,7 +308,7 @@ if cfg.addConn and cfg.IEGain > 0.0:
                                 'postConds': {'pop': post, 'ynorm': layer[l]},
                                 'synMech': synMech,
                                 'probability': prob,
-                                'weight': wmat[pre][post] * cfg.IEGain * cfg.IECellTypeGain[preType] * cfg.IELayerGain[l], 
+                                'weight': wmat[pre][post] * cfg.IEGain * cfg.IECellTypeGain[preType] * (cfg.IELayerGain[l]*expression_factor),
                                 'synMechWeightFactor': cfg.synWeightFractionEI,
                                 'delay': 'defaultDelay+dist_3D/propVelocity',
                                 'synsPerConn': 1,

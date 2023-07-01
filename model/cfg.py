@@ -109,7 +109,7 @@ cfg.weightNormScaling = {'NGF_reduced': 1.0, 'ITS4_reduced': 1.0}
 #------------------------------------------------------------------------------
 cfg.AMPATau2Factor = 1.0
 cfg.synWeightFractionEE = [0.5, 0.5] # E->E AMPA to NMDA ratio
-cfg.synWeightFractionEI = [0.5, 0.35] # E->I AMPA to NMDA ratio
+cfg.synWeightFractionEI = [0.5, 0.5] # E->I AMPA to NMDA ratio
 cfg.synWeightFractionIE = [0.9, 0.1]  # SOM -> E GABAASlow to GABAB ratio
 cfg.synWeightFractionII = [0.9, 0.1]  # SOM -> E GABAASlow to GABAB ratio
 

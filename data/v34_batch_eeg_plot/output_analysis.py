@@ -64,8 +64,8 @@ def main_method_avg(folder_name):
         try:
             sim.load(f'v34_batch_eeg_plot_{i}_{folder_name}_data.pkl', instantiate=False)
             print(f"sim.allSimData.keys() : {sim.allSimData.keys()}")
-            time_range = [2500, 5500]
-            test([0, 1, 12, 13], time_range, 'avg', freq, folder_name)
+            # time_range = [2500, 5500]
+            # test([0, 1, 12, 13], time_range, 'avg', freq, folder_name)
             list_sum += np.asarray(sim.allSimData['LFP'])
         except FileNotFoundError:
             number_of_seed -= 1
