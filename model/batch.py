@@ -277,28 +277,8 @@ def custom_speech(filename):
 
     params[('ICThalInput', 'file')] = [
         '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
-        # '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_0_1.mat',
-        # '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_0_0.05.mat',
-        # '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_-0.05_0.05.mat',
-        # '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_0_2.244.mat',
-        # '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_-2_2.mat',
-        # '../data/ICoutput/20Hz_10kHz_4s_AM_click_train_1kBMF_100CF_old_83_0_4.mat',
-
         '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
-        # '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_0_1.mat',
-        # '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_0_0.05.mat',
-        # '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_-0.05_0.05.mat',
-        # '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_0_2.244.mat',
-        # '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_-2_2.mat',
-        # '../data/ICoutput/30Hz_10kHz_4s_AM_click_train_1kBMF_100CF_old_83.mat',
-
-        '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat',
-        # '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_0_1.mat',
-        # '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_0_0.05.mat',
-        # '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_50_-0.05_0.05.mat',
-        # '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_0_2.244.mat',
-        # '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_new_83_-2_2.mat',
-        # '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF_old_83.mat'
+        '../data/ICoutput/40Hz_10kHz_4s_AM_click_train_1kBMF_100CF.mat'
     ]
 
     groupedParams = []
@@ -307,7 +287,7 @@ def custom_speech(filename):
     # initial config
     initCfg = {}  # set default options from prev sim
 
-    initCfg['duration'] = 8000
+    initCfg['duration'] = 6500
     initCfg['printPopAvgRates'] = [0, initCfg['duration']]
     initCfg['scaleDensity'] = 1.0
     initCfg['recordStep'] = 0.05
@@ -1605,7 +1585,7 @@ def setRunCfg(b, type='mpi_bulletin'):
                     'walltime': '24:00:00',
                     'partition': 'standard',
                     'nodes': 1,
-                    'coresPerNode': 32,
+                    'coresPerNode': 20,
                     'email': 'poulami.ghosh@bccn-berlin.de',
                     'folder': '/home/users/p/poulami/macaque_auditory_model/model',
                     'script': 'init.py',
