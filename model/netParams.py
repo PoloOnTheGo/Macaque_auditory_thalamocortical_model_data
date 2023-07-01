@@ -292,12 +292,14 @@ if cfg.addConn and cfg.IEGain > 0.0:
                             expression_factor = 1
                             if 'SOM' in pre:
                                 synMech = SOMESynMech
+                                if '2' in l:
+                                    expression_factor -= 0.366
+                                elif '3' in l:
+                                    expression_factor -= .296
+                                elif any(layer in l for layer in ('4', '5A', '5B', '6')):
+                                    expression_factor -= .333
                             elif 'PV' in pre:
                                 synMech = PVSynMech
-                                if '3' in l:
-                                    expression_factor -= 0.29
-                                elif '4' in l:
-                                    expression_factor -= .35
                             elif 'VIP' in pre:
                                 synMech = VIPSynMech
                             elif 'NGF' in pre:
