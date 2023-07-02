@@ -188,7 +188,7 @@ Ipops = ['NGF1',                            # L1
 netParams.synMechParams['NMDA'] = {'mod': 'MyExp2SynNMDABB', 'tau1NMDA': 15, 'tau2NMDA': 150, 'e': 0}
 netParams.synMechParams['AMPA'] = {'mod':'MyExp2SynBB', 'tau1': 0.05, 'tau2': 5.3*cfg.AMPATau2Factor, 'e': 0}
 netParams.synMechParams['GABAB'] = {'mod':'MyExp2SynBB', 'tau1': 3.5, 'tau2': 260.9, 'e': -93} 
-netParams.synMechParams['GABAA'] = {'mod':'MyExp2SynBB', 'tau1': 0.07, 'tau2': 18.2, 'e': -80}
+netParams.synMechParams['GABAA'] = {'mod':'MyExp2SynBB', 'tau1': 0.07, 'tau2': 28.2, 'e': -80}
 netParams.synMechParams['GABAA_VIP'] = {'mod':'MyExp2SynBB', 'tau1': 0.3, 'tau2': 6.4, 'e': -80}  # Pi et al 2013
 netParams.synMechParams['GABAASlow'] = {'mod': 'MyExp2SynBB','tau1': 2, 'tau2': 100, 'e': -80}
 netParams.synMechParams['GABAASlowSlow'] = {'mod': 'MyExp2SynBB', 'tau1': 200, 'tau2': 400, 'e': -80}
@@ -289,15 +289,8 @@ if cfg.addConn and cfg.IEGain > 0.0:
                             
                             prob = '%f * exp(-dist_2D/%f)' % (pmat[pre][post], lmat[pre][post])
 
-                            expression_factor = 1
                             if 'SOM' in pre:
                                 synMech = SOMESynMech
-                                if '2' in l:
-                                    expression_factor -= 0.366
-                                elif '3' in l:
-                                    expression_factor -= .296
-                                elif any(layer in l for layer in ('4', '5A', '5B', '6')):
-                                    expression_factor -= .333
                             elif 'PV' in pre:
                                 synMech = PVSynMech
                             elif 'VIP' in pre:
