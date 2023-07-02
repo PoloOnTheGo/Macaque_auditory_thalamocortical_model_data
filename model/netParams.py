@@ -303,7 +303,7 @@ if cfg.addConn and cfg.IEGain > 0.0:
                                 'postConds': {'pop': post, 'ynorm': layer[l]},
                                 'synMech': synMech,
                                 'probability': prob,
-                                'weight': wmat[pre][post] * cfg.IEGain * cfg.IECellTypeGain[preType] * (cfg.IELayerGain[l]*expression_factor),
+                                'weight': wmat[pre][post] * cfg.IEGain * cfg.IECellTypeGain[preType] * cfg.IELayerGain[l],
                                 'synMechWeightFactor': cfg.synWeightFractionEI,
                                 'delay': 'defaultDelay+dist_3D/propVelocity',
                                 'synsPerConn': 1,
