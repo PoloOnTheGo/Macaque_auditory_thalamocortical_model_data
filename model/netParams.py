@@ -305,7 +305,7 @@ if cfg.addConn and cfg.IEGain > 0.0:
                             elif 'NGF' in pre:
                                 synMech = NGFSynMech
 
-                            print(f"===============================++++++++++++++++++++++++++++++++++============ Presynaptic pop : {pop} ,layer : {l} expression_factor : {expression_factor}")
+                            print(f"===============================++++++++++++++++++++++++++++++++++============ Presynaptic pop : {pre} ,layer : {l} expression_factor : {expression_factor}")
                             netParams.connParams['IE_'+pre+'_'+preType+'_'+post+'_'+l] = {
                                 'preConds': {'pop': pre}, 
                                 'postConds': {'pop': post, 'ynorm': layer[l]},
