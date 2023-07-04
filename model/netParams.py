@@ -289,8 +289,15 @@ if cfg.addConn and cfg.IEGain > 0.0:
                             
                             prob = '%f * exp(-dist_2D/%f)' % (pmat[pre][post], lmat[pre][post])
 
+                            expression_factor = 1
                             if 'SOM' in pre:
                                 synMech = SOMESynMech
+                                if '2' in l:
+                                    expression_factor -= 0.366
+                                elif '3' in l:
+                                    expression_factor -= .296
+                                elif any(layer in l for layer in ('4', '5A', '5B', '6')):
+                                    expression_factor -= .333
                             elif 'PV' in pre:
                                 synMech = PVSynMech
                             elif 'VIP' in pre:
@@ -298,12 +305,13 @@ if cfg.addConn and cfg.IEGain > 0.0:
                             elif 'NGF' in pre:
                                 synMech = NGFSynMech
 
-                            netParams.connParams['IE_'+pre+'_'+preType+'_'+post+'_'+l] = { 
+                            print(f"===============================++++++++++++++++++++++++++++++++++============ Presynaptic pop : {pop} ,layer : {l} expression_factor : {expression_factor}")
+                            netParams.connParams['IE_'+pre+'_'+preType+'_'+post+'_'+l] = {
                                 'preConds': {'pop': pre}, 
                                 'postConds': {'pop': post, 'ynorm': layer[l]},
                                 'synMech': synMech,
                                 'probability': prob,
-                                'weight': wmat[pre][post] * cfg.IEGain * cfg.IECellTypeGain[preType] * cfg.IELayerGain[l],
+                                'weight': wmat[pre][post] * cfg.IEGain * cfg.IECellTypeGain[preType] * (cfg.IELayerGain[l]*expression_factor),
                                 'synMechWeightFactor': cfg.synWeightFractionEI,
                                 'delay': 'defaultDelay+dist_3D/propVelocity',
                                 'synsPerConn': 1,
